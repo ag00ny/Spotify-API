@@ -7,7 +7,7 @@
 ## Основной функционал
 
 * **Взаимодействие со Spotify Web API:** отправка HTTP-запросов к внешнему сервису, парсинг и обработка ответов в формате JSON.
-* **Безопасная конфигурация:** изоляция чувствительных данных (секретные ключи Django, Client ID и Client Secret Spotify) в переменных окружения через '.env'.
+* **Безопасная конфигурация:** изоляция чувствительных данных (секретные ключи Django, Client ID и Client Secret Spotify) в переменных окружения через `.env`.
 * **Архитектурный фундамент:** модульная структура Django с разделением логики запросов, настроек и шаблонов.
 
 ---
@@ -16,7 +16,7 @@
 
 * **Язык:** Python 3.14
 * **Фреймворк:** Django
-* **Безопасность и окружение:** 'python-dotenv'
+* **Безопасность и окружение:** `python-dotenv`
 * **Контроль версий:** Git, GitHub
 
 ---
@@ -55,31 +55,32 @@
      # Linux / macOS
      cp .env.example .env
      ```
-   * Откройте созданный '.env' и укажите актуальные данные:
-     '''
-     SECRET_KEY=секретный_ключ_django
+   * Откройте созданный `.env` и укажите актуальные данные:
+     ```ini
+     SECRET_KEY=ваш_секретный_ключ_django
      DEBUG=True
 
-     SPOTIFY_CLIENT_ID=spotify_client_id
-     SPOTIFY_CLIENT_SECRET=spotify_client_secret
-     '''
+     SPOTIFY_CLIENT_ID=ваш_spotify_client_id
+     SPOTIFY_CLIENT_SECRET=ваш_spotify_client_secret
+     ```
    > API-ключи Spotify можно получить в [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
 
 5. **Применение миграций и запуск сервера:**
-   '''bash
+   ```bash
    python manage.py migrate
    python manage.py runserver
-   '''
-   Сервис запустится локально по адресу: 'http://127.0.0.1:8000/'
+   ```
+   Сервис запустится локально по адресу: `http://127.0.0.1:8000/`
 
 ---
 
 ## Структура проекта
 
-
+```text
 ├── music/               # Основное Django-приложение (логика интеграции и вьюхи)
 ├── settings/            # Конфигурационные файлы проекта (settings.py, urls.py, wsgi.py)
 ├── .env.example         # Публичный шаблон переменных окружения
 ├── .gitignore           # Исключение кэша, виртуального окружения и секретов
 ├── manage.py            # Точка входа для управления проектом
 └── requirements.txt     # Список зависимостей Python
+```
